@@ -1,25 +1,79 @@
-#primary {
-  padding-block: 20px;
-  
-  div {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-  /* nesting css */
-  div:nth-child(2) {
-    margin-inline: auto;
-  }
-
-  div:nth-child(3) {
-    justify-self: end;
-  }
+/* =========================================================
+   HEADER
+   Área superior fixa do site
+   Geralmente contém navegação e logo
+   ========================================================= */
+header {
+    height: 6.25rem;   /* Altura fixa do header (100px) */
 }
 
+
+/* =========================================================
+   NAVEGAÇÃO PRIMÁRIA (#primary)
+   Contém menu, logo e busca
+   Usa CSS Grid para distribuição horizontal
+   ========================================================= */
+#primary {
+
+    /* Faz os itens do grid fluírem em colunas (horizontal) */
+    grid-auto-flow: column;
+
+    /* Espaçamento interno vertical (topo e base) */
+    padding-block: 1.25rem;   /* 20px */
+
+    /* =====================================================
+       MENU (ícone + texto)
+       O '&' referencia o seletor pai (#primary)
+       ===================================================== */
+    & #menu {
+        display: flex;          /* Alinha ícone e texto em linha */
+        align-items: center;    /* Centraliza verticalmente */
+        gap: 0.5rem;            /* Espaço entre ícone e texto (8px) */
+    }
+
+    /* =====================================================
+       LOGO CENTRAL
+       margin-inline: auto empurra o elemento para o centro
+       ===================================================== */
+    & #logo {
+        display: flex;          /* Permite alinhamento do logo */
+        align-items: center;    /* Centraliza verticalmente */
+        margin-inline: auto;    /* Centraliza horizontalmente no grid */
+    }
+
+    /* =====================================================
+       ÁREA DE BUSCA
+       Alinhada à direita do header
+       ===================================================== */
+    & #search {
+        display: flex;          /* Ícone + texto em linha */
+        align-items: center;    /* Centraliza verticalmente */
+        gap: 0.5rem;            /* Espaço entre texto e ícone (8px) */
+
+        /* Empurra o item para o final da célula do grid */
+        justify-self: end;
+    }
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO SECUNDÁRIA (#secondary)
+   Menu de categorias abaixo do header
+   ========================================================= */
 #secondary {
-  padding-block: 14px;
-  border: solid 1px var(--stroke-color);
-  border-inline: none;
-  justify-content: space-between;
+
+    /* Distribui os links em colunas automaticamente */
+    grid-auto-flow: column;
+
+    /* Espaçamento vertical interno */
+    padding-block: 0.875rem;   /* 14px */
+
+    /* Borda superior e inferior para separação visual */
+    border: solid 1px var(--stroke-color);
+
+    /* Remove bordas laterais (esquerda e direita) */
+    border-inline: none;
+
+    /* Distribui os links com espaçamento igual */
+    justify-content: space-between;
 }

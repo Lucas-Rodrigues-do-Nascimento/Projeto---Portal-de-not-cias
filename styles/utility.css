@@ -1,36 +1,159 @@
-/* utility-first */
+/* =========================================================
+   CONTAINER PADRÃO DO SITE
+   Centraliza o conteúdo e limita a largura máxima
+   ========================================================= */
+.container {
+
+    /* Variável local:
+       controla a largura máxima do container
+       (pode mudar no media query sem afetar outros elementos) */
+    --max-width: 22.5rem;       /* 360px → largura padrão mobile */
+
+    /* Limita a largura do conteúdo */
+    max-width: var(--max-width);
+
+    /* Espaçamento interno lateral
+       evita que o conteúdo encoste nas bordas da tela */
+    padding-inline: 1rem;       /* 16px */
+
+    /* Centraliza o container horizontalmente */
+    margin-inline: auto;
+}
+
+/*
+   USO NO HTML:
+   ---------------------------------------------------------
+   <main class="container">
+     <section>...</section>
+   </main>
+
+   <header class="container">
+     ...
+   </header>
+*/
+
+
+/* =========================================================
+   CONTROLE DE VISIBILIDADE — DESKTOP
+   Esconde elementos no mobile
+   ========================================================= */
+.desktop-only {
+    display: none;              /* Oculto por padrão (mobile first) */
+}
+
+/*
+   USO NO HTML:
+   ---------------------------------------------------------
+   <nav class="desktop-only">
+     Menu completo
+   </nav>
+*/
+
+
+/* =========================================================
+   CONTROLE DE VISIBILIDADE — MOBILE
+   Mostra elementos apenas no mobile
+   ========================================================= */
+.mobile-only {
+    display: initial;           /* Exibido por padrão */
+}
+
+/*
+   USO NO HTML:
+   ---------------------------------------------------------
+   <button class="mobile-only">
+     ☰
+   </button>
+*/
+
+
+/* =========================================================
+   UTILITÁRIO DE GRID
+   Ativa CSS Grid sem definir colunas
+   ========================================================= */
 .grid {
-  display: grid;
+    display: grid;
 }
 
-.grid-flow-col {
-  grid-auto-flow: column;
-}
+/*
+   USO NO HTML:
+   ---------------------------------------------------------
+   <section id="featured" class="grid">
+     ...
+   </section>
 
-.grid-cols-2 {
-  grid-template-columns: 1fr 1fr;
-}
+   OBS:
+   As colunas geralmente são definidas em outro seletor
+*/
 
-.gap-16 {
-  gap: 16px;
-}
 
-.gap-32 {
-  gap: 32px;
-}
+/* =========================================================
+   CLASSES DE TEXTO (TIPOGRAFIA)
+   Padronizam tamanhos e pesos
+   ========================================================= */
 
+/* Título principal (h1 visual) */
 .text-2xl {
-  font: var(--h1);
+    font: var(--h1);
 }
 
+/*
+   HTML:
+   <h1 class="text-2xl">Destaques</h1>
+*/
+
+
+/* Subtítulo grande */
 .text-xl {
-  font: var(--h2);
+    font: var(--h2);
 }
 
+/*
+   HTML:
+   <h2 class="text-xl">Tecnologia</h2>
+*/
+
+
+/* Subtítulo médio (cards, listas) */
 .text-lg {
-  font: var(--h3);
+    font: var(--h3);
 }
 
+/*
+   HTML:
+   <h3 class="text-lg">Notícia importante</h3>
+*/
+
+
+/* Texto pequeno (apoio, links, metadata) */
 .text-sm {
-  font: var(--text-sm);
+    font: var(--text-sm);
+}
+
+/*
+   HTML:
+   <p class="text-sm">Publicado há 2 horas</p>
+*/
+
+
+/* =========================================================
+   MEDIA QUERY — DESKTOP (>= 1280px)
+   ========================================================= */
+@media (width >= 80em) {
+
+    /* Aumenta a largura máxima do container no desktop */
+    .container {
+        --max-width: 80rem;     /* 1280px */
+        padding-inline: 2rem;   /* 32px */
+    }
+
+    /* Elementos visíveis apenas no desktop */
+    .desktop-only {
+        display: initial;
+    }
+
+    /* Elementos escondidos no desktop */
+    .mobile-only {
+        display: none;
+    }
 }

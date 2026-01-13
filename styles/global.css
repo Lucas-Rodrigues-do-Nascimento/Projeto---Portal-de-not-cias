@@ -1,78 +1,146 @@
+/* =========================================================
+   RESET CSS
+   Remove estilos padrão dos navegadores para evitar
+   comportamentos inconsistentes entre Chrome, Firefox etc.
+   ========================================================= */
+
+/* Aplica em TODOS os elementos */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;                 /* Remove margens padrão */
+    padding: 0;                /* Remove espaçamentos internos padrão */
+    box-sizing: border-box;    /* Faz width/height incluir padding e border */
 }
 
+/* Remove margem padrão específica da tag figure */
+figure {
+    margin: 0;
+}
+
+
+/* =========================================================
+   VARIÁVEIS CSS (Custom Properties)
+   Centralizam cores, fontes e tamanhos
+   Facilitam manutenção e padronização do layout
+   ========================================================= */
 :root {
-  --brand-color-light: #60A5FA;
-  --brand-color-dark: #1D4ED8;
-  --bg-color: #0F172A;
-  --stroke-color: #1E293B;
-  --text-color-primary: #F1F5F9;
-  --text-color-secondary: #CBD5E1;
 
-  --font-family: 'Archivo', sans-serif;
-  --h1: 800 24px/135% var(--font-family);
-  --h2: 800 16px/140% var(--font-family);
-  --h3: 800 14px/140% var(--font-family);
-  --text-span: 600 14px/145% var(--font-family);
-  --text: 400 16px/140% var(--font-family);
-  --text-sm: 400 14px/160% var(--font-family);
+    /* ---------- CORES DO PROJETO ---------- */
+
+    --brand-color-light: #60A5FA;     /* Cor principal clara (hover, destaque) */
+    --brand-color-dark:  #1D4ED8;     /* Cor principal escura */
+    --bg-color:          #0F172A;     /* Cor de fundo geral da página */
+    --stroke-color:      #1E293B;     /* Cor para bordas/divisórias */
+    --text-color-primary:#F1F5F9;     /* Texto principal (branco claro) */
+    --text-color-secondary:#CBD5E1;   /* Texto secundário (cinza claro) */
+
+    /* ---------- FONTES ---------- */
+
+    --font-family: "Archivo", sans-serif; /* Fonte padrão do projeto */
+
+    /* shorthand: peso tamanho/altura-da-linha fonte */
+
+    --h1: 800 1.5rem/135% var(--font-family);      /* Título grande (24px) */
+    --h2: 800 1rem/140% var(--font-family);        /* Subtítulo (16px) */
+    --h3: 800 0.875rem/140% var(--font-family);    /* Título pequeno (14px) */
+
+    --text-span: 500 0.625rem/1.2rem var(--font-family); /* Tags/categorias (10px) */
+
+    --text: 400 1rem/140% var(--font-family);      /* Texto padrão (16px) */
+    --text-sm: 400 0.875rem/160% var(--font-family);/* Texto menor (14px) */
+
+    /* ---------- ESPAÇAMENTOS ---------- */
+
+    --px-base: 1rem;   /* Espaçamento base horizontal (16px) */
 }
 
+
+/* =========================================================
+   BODY
+   Estilos globais do site
+   ========================================================= */
 body {
-  font: var(--text);
-  color: var(--text-color-primary);
-  background-color: var(--bg-color);
+    font: var(--text);                  /* Define fonte padrão */
+    color: var(--text-color-primary);   /* Cor padrão do texto */
+    background-color: var(--bg-color);  /* Cor de fundo da página */
 }
 
+
+/* =========================================================
+   MAIN
+   Área principal do conteúdo
+   Normalmente usada com grid ou flex
+   ========================================================= */
+main {
+    margin-block: 2.5rem;   /* Espaçamento em cima e embaixo (40px) */
+
+    /* Espaçamentos internos do grid */
+    row-gap: 5rem;         /* Espaço entre linhas (80px) */
+    column-gap: 2rem;      /* Espaço entre colunas (32px) */
+}
+
+
+/* =========================================================
+   CONTAINER
+   Centraliza o conteúdo e limita largura máxima
+   ========================================================= */
+.container {
+    width: 100%;               /* Ocupa toda largura disponível */
+    max-width: var(--max-width); /* Largura máxima do layout */
+    margin-inline: auto;       /* Centraliza horizontalmente */
+    /* padding-inline comentado para controle via media query */
+}
+
+
+/* =========================================================
+   LINKS
+   Remove estilo padrão de links
+   ========================================================= */
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;     /* Remove sublinhado */
+    color: inherit;            /* Usa a cor do elemento pai */
 }
 
+/* Efeito ao passar o mouse */
 a:hover {
-  color: var(--brand-color-light);
+    color: var(--brand-color-light); /* Destaque com cor principal */
 }
 
+
+/* =========================================================
+   TÍTULOS
+   Remove estilos padrões do navegador
+   ========================================================= */
 h1,
 h2,
 h3 {
-  font: inherit;
+    font: inherit;  /* Herda a fonte definida no elemento pai */
 }
 
+
+/* =========================================================
+   IMAGENS
+   Garante responsividade
+   ========================================================= */
 img {
-  max-width: 100%;
+    max-width: 100%;   /* Impede imagem de ultrapassar o container */
+    height: auto;      /* Mantém proporção da imagem */
 }
 
-.container {
-  max-width: 1280px;
-  padding-inline: 32px;
-  margin-inline: auto;
-}
 
-main {
-  margin-block: 40px;
-  row-gap: 80px;
-  column-gap: 32px;
+/* =========================================================
+   MEDIA QUERY (DESKTOP)
+   Aplica estilos somente em telas grandes
+   80em ≈ 1280px
+   ========================================================= */
+@media (width >= 80em) {
 
-  grid-template-columns: 2fr 1.4fr;
+    /* Ajusta espaçamentos base no desktop */
+    :root {
+        --px-base: 2rem;   /* Aumenta espaçamento base para 32px */
+    }
 
-  grid-template-areas:
-      "featured featured"
-      "weekly weekly"
-      "ai aside";
-}
-
-.content-tag {
-  display: inline-block;
-  background-color: var(--brand-color-dark);
-  padding: 4px 8px;
-  border-radius: 4px;
-  font: 500 10px/1.2 var(--font-family);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-color-primary);
-  box-shadow: 0px 4px 16px rgba(2, 6, 23, 0.251);
+    /* Mais respiro lateral em telas grandes */
+    .container {
+        padding-inline: 2rem; /* Espaçamento interno horizontal */
+    }
 }

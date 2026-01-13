@@ -1,84 +1,168 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<!-- Declaração do tipo de documento HTML5 -->
+
+<html lang="pt-br">
+<!-- Tag raiz do documento HTML, com idioma definido como português brasileiro -->
 
 <head>
+    <!-- Seção HEAD: contém metadados e links para recursos externos -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Pré-conexão com o servidor do Google Fonts para melhorar performance -->
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Pré-conexão com servidor de arquivos estáticos do Google Fonts (crossorigin para CORS) -->
 
     <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 (suporta caracteres especiais) -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de notícias</title>
-    <link rel="stylesheet" href="styles/index.css">
+    <!-- Configuração responsiva: largura = largura do dispositivo, zoom inicial = 1.0 -->
+
+    <title>Portal de Notícias</title>
+    <!-- Título da página que aparece na aba do navegador -->
+
+    <link rel="stylesheet" href="./styles/index.css">
+    <!-- Link para o arquivo CSS principal (./styles/index.css) que importa: global.css, utility.css, header.css e sections.css -->
 
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <!-- Importação da fonte Archivo do Google Fonts com variações de peso e itálico -->
 </head>
 
-<body>
-    <header class="container">
-        <nav id="primary" class="grid grid-flow-col">
-            <div>
-                <img src="assets/icons/List.svg" alt="ícone de menu">
-                <strong>Menu</strong>
+<body class="container">
+    <!-- Tag BODY: conteúdo visível da página. Classe "container" (provavelmente em global.css) -->
+
+    <header>
+        <!-- Cabeçalho principal da página (estilizado em header.css) -->
+
+        <nav id="primary" class="grid">
+            <!-- Navegação primária com ID "primary" (header.css) e classe "grid" (global.css ou utility.css) -->
+
+            <div id="menu">
+                <!-- Container do menu com ID "menu" (header.css) -->
+
+                <img src="./assets/icons/List.svg" alt="Ícone de menu hambúrguer">
+                <!-- Ícone do menu hambúrguer (SVG) com texto alternativo para acessibilidade -->
+
+                <strong class="desktop-only">Menu</strong>
+                <!-- Texto "Menu" visível apenas em desktop (classe "desktop-only" provavelmente em utility.css) -->
             </div>
 
-            <div>
-                <img src="assets/Logo.svg" alt="TechNews logo">
+            <div id="logo">
+                <!-- Container do logotipo com ID "logo" (header.css) -->
+
+                <img src="./assets/Logo.svg" alt="Logotipo TechNews - Portal de Notícias sobre Tecnologia">
+                <!-- Logotipo da marca TechNews em formato SVG com descrição completa -->
             </div>
 
-            <div>
-                <strong>Buscar</strong>
-                <img src="assets/icons/MagnifyingGlass.svg" alt="ícone de lupa para pesquisa">
+            <div id="search">
+                <!-- Container de busca com ID "search" (header.css) -->
+
+                <strong class="desktop-only">Buscar</strong>
+                <!-- Texto "Buscar" visível apenas em desktop (utility.css) -->
+
+                <img src="./assets/icons/MagnifyingGlass.svg" alt="Ícone de lupa para busca">
+                <!-- Ícone de lupa para busca (SVG) com descrição acessível -->
             </div>
         </nav>
-        <nav id="secondary" class="grid grid-flow-col">
-            <a href="#">Inteligência Artificial</a>
-            <a href="#">Blockchain</a>
-            <a href="#">Hologramas</a>
-            <a href="#">Internet</a>
-            <a href="#">Vestíveis</a>
-            <a href="#">Realidade Aumentada</a>
-            <a href="#">Realidade Virtual</a>
+
+        <nav id="secondary" class="grid">
+            <!-- Navegação secundária com ID "secondary" (header.css) e classe "grid" (utility.css) -->
+
+            <a class="desktop-only" href="#">Inteligência Artificial</a>
+            <!-- Link visível apenas em desktop (classe "desktop-only" em utility.css) -->
+
+            <a class="desktop-only" href="#">Blockchain</a>
+            <!-- Link visível apenas em desktop (utility.css) -->
+
+            <a class="desktop-only" href="#">Hologramas</a>
+            <!-- Link visível apenas em desktop (utility.css) -->
+
+            <a class="desktop-only" href="#">Internet</a>
+            <!-- Link visível apenas em desktop (utility.css) -->
+
+            <a class="desktop-only" href="#">Vestíveis</a>
+            <!-- Link visível apenas em desktop (utility.css) -->
+
+            <a class="desktop-only" href="#">Realidade Aumentada</a>
+            <!-- Link visível apenas em desktop (utility.css) -->
+
+            <a class="desktop-only" href="#">Realidade Virtual</a>
+            <!-- Link visível apenas em desktop (utility.css) -->
+
+            <a class="mobile-only" href="#weakly">Mais lidas</a>
+            <!-- Link visível apenas em mobile, âncora para seção #weakly (classe "mobile-only" provavelmente em utility.css) -->
+
+            <a class="mobile-only" href="#ai">Destaques de IA</a>
+            <!-- Link visível apenas em mobile, âncora para seção #ai (utility.css) -->
+
+            <a class="mobile-only" href="#see-these">Viu isso?</a>
+            <!-- Link visível apenas em mobile, âncora para seção #see-these (utility.css) -->
         </nav>
     </header>
 
-    <main class="grid container">
-        <section id="featured" class="grid grid-flow-col gap-16">
-            <figure class="card">
-                <img src="assets/images/Image 01.png" alt="Robôs domésticos começam a ser adotados para tarefas diárias, prometendo mais conforto e
-                eficiência nas residências.">
+    <main>
+        <!-- Conteúdo principal da página (estilizado provavelmente em sections.css ou global.css) -->
+
+        <section id="featured">
+            <!-- Seção de destaques com ID "featured" (sections.css) -->
+
+            <figure class="card-featured">
+                <!-- Card principal em destaque, classe "card-featured" (sections.css) -->
+
+                <img src="assets/images/Image 01.png"
+                    alt="Imagem de um robô doméstico realizando tarefas em uma residência moderna">
+                <!-- Imagem do card com descrição acessível do conteúdo visual -->
 
                 <figcaption>
+                    <!-- Legenda da figura (estilizada em sections.css) -->
+
                     <span class="content-tag">robótica</span>
+                    <!-- Tag de categoria, classe "content-tag" (sections.css ou utility.css) -->
+
                     <h2 class="text-2xl">
+                        <!-- Título nível 2, classe "text-2xl" para tamanho de fonte (utility.css) -->
                         Robôs domésticos começam a ser adotados para tarefas diárias, prometendo mais conforto e
                         eficiência nas residências.
                     </h2>
                 </figcaption>
-
-
             </figure>
 
-            <div class="grid grid-cols-2 gap-16">
+            <div class="featured-list">
+                <!-- Container de lista de destaques, classe "featured-list" (sections.css) -->
+
                 <figure class="card">
-                    <img src="assets/images/Image 02.png"
-                        alt="Novo Smartphone Projetor 3D chega ao mercado, transformando a forma como vemos nossas telas!">
+                    <!-- Card de notícia, classe "card" (sections.css) -->
+
+                    <img src="assets/images/Image 02.png" alt="Smartphone projetando imagem holográfica 3D">
+                    <!-- Imagem do card com descrição do conteúdo -->
 
                     <figcaption>
+                        <!-- Legenda da figura -->
+
                         <span class="content-tag">hologramas</span>
+                        <!-- Tag de categoria "hologramas" (sections.css ou utility.css) -->
+
                         <h2 class="text-lg">
+                            <!-- Título nível 2, classe "text-lg" para tamanho médio (utility.css) -->
                             Novo Smartphone Projetor 3D chega ao mercado, transformando a forma como vemos nossas telas!
                         </h2>
                     </figcaption>
                 </figure>
 
                 <figure class="card">
-                    <img src="assets/images/Image 03.png"
-                        alt="Tecnologia 6G chega às metrópoles brasileiras, prometendo revolucionar a forma como vivemos e nos comunicamos.">
+                    <!-- Card de notícia (sections.css) -->
+
+                    <img src="assets/images/Image 03.png" alt="Torre de telecomunicações 6G em metrópole brasileira">
+                    <!-- Imagem do card com descrição acessível -->
 
                     <figcaption>
                         <span class="content-tag">internet</span>
+                        <!-- Tag de categoria "internet" (sections.css ou utility.css) -->
+
                         <h2 class="text-lg">
+                            <!-- Título com classe "text-lg" (utility.css) -->
                             Tecnologia 6G chega às metrópoles brasileiras, prometendo revolucionar a forma como vivemos
                             e nos comuni...
                         </h2>
@@ -86,25 +170,37 @@
                 </figure>
 
                 <figure class="card">
+                    <!-- Card de notícia (sections.css) -->
+
                     <img src="assets/images/Image 04.png"
-                        alt="Empresa lança relógio inteligente capaz de monitorar a saúde mental, oferecendo insights valiosos para o bem-estar pessoal.">
+                        alt="Smartwatch exibindo dados de monitoramento de saúde mental">
+                    <!-- Imagem do card com descrição -->
 
                     <figcaption>
                         <span class="content-tag">vestíveis</span>
+                        <!-- Tag de categoria "vestíveis" (sections.css ou utility.css) -->
+
                         <h2 class="text-lg">
+                            <!-- Título com classe "text-lg" (utility.css) -->
                             Empresa lança relógio inteligente capaz de monitorar a saúde mental, oferecendo insights
-                            valiosos para o...
+                            valiosos para o ...
                         </h2>
                     </figcaption>
                 </figure>
 
                 <figure class="card">
+                    <!-- Card de notícia (sections.css) -->
+
                     <img src="assets/images/Image 05.png"
-                        alt="Escolas adotam a tecnologia VR para proporcionar experiências imersivas, transformando a aprendizagem tradicional.">
+                        alt="Estudantes usando óculos de realidade virtual em sala de aula">
+                    <!-- Imagem do card com descrição do contexto educacional -->
 
                     <figcaption>
                         <span class="content-tag">realidade virtual</span>
+                        <!-- Tag de categoria "realidade virtual" (sections.css ou utility.css) -->
+
                         <h2 class="text-lg">
+                            <!-- Título com classe "text-lg" (utility.css) -->
                             Escolas adotam a tecnologia VR para proporcionar experiências imersivas, transformando a
                             aprendizagem trad...
                         </h2>
@@ -113,227 +209,389 @@
             </div>
         </section>
 
-        <section id="weekly">
-            <header class="grid grid-flow-col">
+        <section id="weakly">
+            <!-- Seção "Mais lidas da semana" com ID "weakly" (sections.css) -->
+
+            <header class="section-header">
+                <!-- Cabeçalho de seção, classe "section-header" (sections.css) -->
+
                 <h3>Mais lidas da semana</h3>
-                <a href="#" class="grid grid-flow-col">
+                <!-- Título nível 3 (estilizado em sections.css ou global.css) -->
+
+                <a href="#weakly" class="see-all">
+                    <!-- Link "Ver tudo", classe "see-all" (sections.css) -->
+
                     <strong>Ver tudo</strong>
+                    <!-- Texto em negrito -->
+
                     <span></span>
+                    <!-- Span vazio, provavelmente usado para ícone/seta via CSS (sections.css) -->
                 </a>
             </header>
 
-            <div class="grid gap-16">
-                <figure>
+            <div class="weakly-list">
+                <!-- Container de lista semanal, classe "weakly-list" (sections.css) -->
+
+                <figure class="weakly-card">
+                    <!-- Card semanal, classe "weakly-card" (sections.css) -->
+
                     <span class="content-tag">veículos</span>
-                    <img src="assets/images/Image 06.png" alt="">
+                    <!-- Tag de categoria "veículos" (sections.css ou utility.css) -->
+
+                    <img src="./assets/images/Image 06.png" alt="Protótipo de veículo voador em demonstração">
+                    <!-- Imagem do card com descrição do veículo voador -->
+
                     <p>Protótipo de veículo voador é apresentado, marcando o início da era dos transportes aéreos
-                        pessoa...</p>
+                        pessoais.</p>
+                    <!-- Parágrafo com descrição (estilizado em sections.css ou global.css) -->
                 </figure>
 
-                <figure>
+                <figure class="weakly-card">
+                    <!-- Card semanal (sections.css) -->
+
                     <span class="content-tag">hologramas</span>
-                    <img src="assets/images/Image 07.png" alt="">
-                    <p>Plataforma de videoconferência apresenta nova função de hologramas, tornando as chamada...</p>
+                    <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                    <img src="./assets/images/Image 07.png"
+                        alt="Videoconferência com participantes em formato de holograma">
+                    <!-- Imagem do card com descrição da tecnologia holográfica -->
+
+                    <p>Plataforma de videoconferência apresenta nova função de hologramas, tornando as chamadas virtuais
+                        mais realistas e envolventes.</p>
+                    <!-- Descrição do card -->
                 </figure>
 
-                <figure>
+                <figure class="weakly-card">
+                    <!-- Card semanal (sections.css) -->
+
                     <span class="content-tag">realidade virtual</span>
-                    <img src="assets/images/Image 08.png" alt="">
-                    <p>Nova geração de consoles de videogame é lançada, trazendo gráficos ultra-realistas e experiên...
-                    </p>
+                    <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                    <img src="./assets/images/Image 08.png"
+                        alt="Console de videogame de nova geração com gráficos realistas">
+                    <!-- Imagem do card com descrição do console -->
+
+                    <p>Nova geração de consoles de videogame é lançada, trazendo gráficos ultra-realistas e experiências
+                        de jogo totalmente envolventes.</p>
+                    <!-- Descrição do card -->
                 </figure>
 
-                <figure>
+                <figure class="weakly-card">
+                    <!-- Card semanal (sections.css) -->
+
                     <span class="content-tag">internet</span>
-                    <img src="assets/images/Image 09.png" alt="">
+                    <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                    <img src="./assets/images/Image 09.png" alt="Satélite transmitindo internet para área remota">
+                    <!-- Imagem do card com descrição do projeto de internet via satélite -->
+
                     <p>Projeto busca oferecer internet de alta velocidade em áreas remotas através de satélites.</p>
+                    <!-- Descrição do card -->
                 </figure>
             </div>
         </section>
 
         <section id="ai">
-            <header class="grid grid-flow-col">
-                <h3>Destaques da Inteligência Artificial</h3>
-                <a href="#" class="grid grid-flow-col">
-                    <strong>Ver tudo</strong>
-                    <span></span>
-                </a>
-            </header>
+            <!-- Seção de IA com ID "ai" (sections.css) -->
 
-            <div class="grid gap-32">
-                <article class="grid grid-flow-col gap-16">
-                    <div>
-                        <span class="content-tag">Inteligência Artificial</span>
-                        <h3 class="text-xl">
-                            Empresa surpreende o mundo ao anunciar um algoritmo capaz de prever eventos futuros com alta
-                            precisão.
-                        </h3>
-                        <p class="text-sm">
-                            Em um avanço surpreendente da inteligência artificial, uma empresa anuncia o desenvolvimento
-                            de um algoritmo capaz de prever eventos futuros com notável precisão. Descubra como essa
-                            tecnologia está desafiando as fronteiras da previsão e quais são as implicações para
-                            diversas áreas, desde finanças até plan...
-                        </p>
-                    </div>
-                    <div>
-                        <img src="assets/images/Image 10.png" alt="">
-                    </div>
-                </article>
+            <div class="mid-page">
+                <!-- Container central da página, classe "mid-page" (sections.css ou global.css) -->
 
-                <article class="grid grid-flow-col gap-16">
-                    <div>
-                        <span class="content-tag">Inteligência Artificial</span>
-                        <h3 class="text-xl">
-                            Dispositivo portátil promete traduzir instantaneamente diferentes idiomas, facilitando a
-                            comunicação global.
-                        </h3>
-                        <p class="text-sm">
-                            Em um mundo cada vez mais conectado, a comunicação sem fronteiras é essencial. Nesse
-                            contexto, um dispositivo portátil surge como um verdadeiro herói linguístico, prometendo
-                            quebrar as barreiras idiomáticas instantaneamente. Imagine poder se comunicar fluentemente
-                            em qualquer lugar do mundo, indep...
-                        </p>
-                    </div>
-                    <div>
-                        <img src="assets/images/Image 11.png" alt="">
-                    </div>
-                </article>
+                <div class="ai-main">
+                    <!-- Container principal de IA, classe "ai-main" (sections.css) -->
 
-                <article class="grid grid-flow-col gap-16">
-                    <div>
-                        <span class="content-tag">Inteligência Artificial</span>
-                        <h3 class="text-xl">
-                            Criados para auxiliar idosos, robôs de companhia ganham popularidade, oferecendo suporte
-                            emocional e físico aos usu...
-                        </h3>
-                        <p class="text-sm">
-                            A tecnologia não só avança, mas também busca tornar a vida mais significativa para todas as
-                            gerações. No cenário atual, os robôs sociais, projetados especialmente para oferecer apoio e
-                            companhia aos idosos, estão ganhando destaque. Mais do que meros assistentes, esses robôs
-                            são programados para f...
-                        </p>
-                    </div>
-                    <div>
-                        <img src="assets/images/Image 12.png" alt="">
-                    </div>
-                </article>
+                    <header class="section-header">
+                        <!-- Cabeçalho de seção (sections.css) -->
 
-                <article class="grid grid-flow-col gap-16">
-                    <div>
-                        <span class="content-tag">Inteligência Artificial</span>
-                        <h3 class="text-xl">
-                            Aplicativo utiliza inteligência artificial para ajudar usuários a manterem o foco e
-                            aumentarem a produtividade no dia a dia.
-                        </h3>
-                        <p class="text-sm">
-                            No turbilhão da vida moderna, onde distrações são abundantes, um aplicativo inovador surge
-                            como um aliado indispensável para quem busca maior concentração e eficiência no cotidiano.
-                            Utilizando avançados algoritmos de inteligência artificial, este aplicativo promete mais do
-                            que simplesmente gerenci...
-                        </p>
+                        <h3>Destaques da Inteligência Artificial</h3>
+                        <!-- Título nível 3 -->
+
+                        <a href="#ai" class="see-all">
+                            <!-- Link "Ver tudo" (sections.css) -->
+
+                            <strong>Ver tudo</strong>
+                            <!-- Texto em negrito -->
+
+                            <span></span>
+                            <!-- Span para ícone via CSS (sections.css) -->
+                        </a>
+                    </header>
+
+                    <div class="ai-list">
+                        <!-- Lista de artigos de IA, classe "ai-list" (sections.css) -->
+
+                        <article class="ai-article">
+                            <!-- Artigo de IA, classe "ai-article" (sections.css) -->
+
+                            <div>
+                                <!-- Container de conteúdo (estilizado em sections.css) -->
+
+                                <span class="content-tag">Inteligência Artificial</span>
+                                <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                                <h3 class="text-xl">
+                                    <!-- Título nível 3, classe "text-xl" para tamanho grande (utility.css) -->
+                                    Empresa surpreende o mundo ao anunciar um algoritmo capaz de prever eventos futuros
+                                    com alta precisão.
+                                </h3>
+
+                                <p class="text-sm">
+                                    <!-- Parágrafo, classe "text-sm" para texto pequeno (utility.css) -->
+                                    Em um avanço surpreendente da inteligência artificial, uma empresa anuncia o
+                                    desenvolvimento de um algoritmo capaz de prever eventos futuros com notável
+                                    precisão. Descubra como essa tecnologia está desafiando as fronteiras da previsão e
+                                    quais são as implicações para diversas áreas, desde finanças até ...
+                                </p>
+                            </div>
+
+                            <div>
+                                <!-- Container da imagem (sections.css) -->
+
+                                <img src="./assets/images/Image 10.png"
+                                    alt="Visualização de algoritmo de IA analisando dados preditivos">
+                                <!-- Imagem do artigo com descrição do algoritmo de previsão -->
+                            </div>
+                        </article>
+
+                        <article class="ai-article">
+                            <!-- Artigo de IA (sections.css) -->
+
+                            <div>
+                                <span class="content-tag">Inteligência Artificial</span>
+                                <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                                <h3 class="text-xl">
+                                    <!-- Título (utility.css) -->
+                                    Dispositivo portátil promete traduzir instantaneamente diferentes idiomas,
+                                    facilitando a comunicação global.
+                                </h3>
+
+                                <p class="text-sm">
+                                    <!-- Parágrafo (utility.css) -->
+                                    Em um mundo cada vez mais conectado, a comunicação sem fronteiras é essencial. Nesse
+                                    contexto, um dispositivo portátil surge como um verdadeiro herói linguístico,
+                                    prometendo quebrar as barreiras idiomáticas instantaneamente. Imagine poder se
+                                    comunicar fluentemente em qualquer lugar do mundo, indepe...
+                                </p>
+                            </div>
+
+                            <div>
+                                <img src="./assets/images/Image 11.png"
+                                    alt="Dispositivo portátil de tradução simultânea em uso">
+                                <!-- Imagem do artigo com descrição do tradutor portátil -->
+                            </div>
+                        </article>
+
+                        <article class="ai-article">
+                            <!-- Artigo de IA (sections.css) -->
+
+                            <div>
+                                <span class="content-tag">Inteligência Artificial</span>
+                                <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                                <h3 class="text-xl">
+                                    <!-- Título (utility.css) -->
+                                    Criados para auxiliar idosos, robôs de companhia ganham popularidade, oferecendo
+                                    suporte emocional e físico aos ...
+                                </h3>
+
+                                <p class="text-sm">
+                                    <!-- Parágrafo (utility.css) -->
+                                    A tecnologia não só avança, mas também busca tornar a vida mais significativa para
+                                    todas as gerações. No cenário atual, os robôs sociais, projetados especialmente para
+                                    oferecer apoio e companhia aos idosos, estão ganhando destaque. Mais do que meros
+                                    assistentes, esses robôs são programados para f...
+                                </p>
+                            </div>
+
+                            <div>
+                                <img src="./assets/images/Image 12.png"
+                                    alt="Robô de companhia interagindo com pessoa idosa">
+                                <!-- Imagem do artigo com descrição do robô social -->
+                            </div>
+                        </article>
+
+                        <article class="ai-article">
+                            <!-- Artigo de IA (sections.css) -->
+
+                            <div>
+                                <span class="content-tag">Inteligência Artificial</span>
+                                <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                                <h3 class="text-xl">
+                                    <!-- Título (utility.css) -->
+                                    Aplicativo utiliza inteligência artificial para ajudar usuários a manterem o foco e
+                                    aumentarem a produtividade no dia a dia.
+                                </h3>
+
+                                <p class="text-sm">
+                                    <!-- Parágrafo (utility.css) -->
+                                    No turbilhão da vida moderna, onde distrações são abundantes, um aplicativo inovador
+                                    surge como um aliado indispensável para quem busca maior concentração e eficiência
+                                    no cotidiano. Utilizando avançados algoritmos de inteligência artificial, este
+                                    aplicativo promete mais do que simplesmente gerenci...
+                                </p>
+                            </div>
+
+                            <div>
+                                <img src="./assets/images/Image 13.png"
+                                    alt="Interface de aplicativo de produtividade com IA">
+                                <!-- Imagem do artigo com descrição do app de produtividade -->
+                            </div>
+                        </article>
                     </div>
-                    <div>
-                        <img src="assets/images/Image 13.png" alt="">
+                </div>
+            </div>
+
+            <div class="aside">
+                <!-- Barra lateral, classe "aside" (sections.css) -->
+
+                <div id="ads">
+                    <!-- Container de anúncios com ID "ads" (sections.css) -->
+
+                    <img src="./assets/Ads.png" alt="Espaço publicitário">
+                    <!-- Imagem de propaganda com descrição genérica -->
+                </div>
+
+                <section id="more">
+                    <!-- Seção "Viu isso aqui?" com ID "more" (sections.css) -->
+
+                    <header class="section-header">
+                        <!-- Cabeçalho de seção (sections.css) -->
+
+                        <h3>Viu isso aqui?</h3>
+                        <!-- Título nível 3 -->
+
+                        <a href="#see-these" class="see-all">
+                            <!-- Link "Ver tudo" (sections.css) -->
+
+                            <strong>Ver tudo</strong>
+                            <!-- Texto em negrito -->
+
+                            <span></span>
+                            <!-- Span para ícone (sections.css) -->
+                        </a>
+                    </header>
+
+                    <div class="see-these">
+                        <!-- Container de artigos, classe "see-these" (sections.css) -->
+
+                        <article class="see-these-article">
+                            <!-- Artigo lateral, classe "see-these-article" (sections.css) -->
+
+                            <div>
+                                <!-- Container da imagem (sections.css) -->
+
+                                <img src="./assets/images/Image 14.png"
+                                    alt="Interface de aplicativo de monitoramento ambiental">
+                                <!-- Imagem do artigo com descrição do app ambiental -->
+                            </div>
+
+                            <div>
+                                <!-- Container de texto (sections.css) -->
+
+                                <span class="content-tag">software</span>
+                                <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                                <h3 class="text-xl">
+                                    <!-- Título (utility.css) -->
+                                    Aplicativo de monitoramento ambiental ganha destaque, incentivando práticas
+                                    ecológicas e ...
+                                </h3>
+                            </div>
+                        </article>
+
+                        <article class="see-these-article">
+                            <!-- Artigo lateral (sections.css) -->
+
+                            <div>
+                                <img src="./assets/images/Image 15.png"
+                                    alt="Óculos de realidade virtual com tecnologia de feedback tátil">
+                                <!-- Imagem do artigo com descrição dos óculos VR -->
+                            </div>
+
+                            <div>
+                                <span class="content-tag">realidade virtual</span>
+                                <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                                <h3 class="text-xl">
+                                    <!-- Título (utility.css) -->
+                                    Óculos de realidade virtual com feedback tátil proporcionam uma experiência
+                                    sensorial compl...
+                                </h3>
+                            </div>
+                        </article>
+
+                        <article class="see-these-article">
+                            <!-- Artigo lateral (sections.css) -->
+
+                            <div>
+                                <img src="./assets/images/Image 16.png"
+                                    alt="Representação visual de criptomoeda sustentável">
+                                <!-- Imagem do artigo com descrição da moeda digital -->
+                            </div>
+
+                            <div>
+                                <span class="content-tag">criptomoedas</span>
+                                <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                                <h3 class="text-xl">
+                                    <!-- Título (utility.css) -->
+                                    Surge uma nova moeda digital baseada em tecnologias sustentáveis, buscando minimizar
+                                    ...
+                                </h3>
+                            </div>
+                        </article>
+
+                        <article class="see-these-article">
+                            <!-- Artigo lateral (sections.css) -->
+
+                            <div>
+                                <img src="./assets/images/Image 17.png" alt="Drone realizando entrega de pacote">
+                                <!-- Imagem do artigo com descrição do drone de entrega -->
+                            </div>
+
+                            <div>
+                                <span class="content-tag">drones</span>
+                                <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                                <h3 class="text-xl">
+                                    <!-- Título (utility.css) -->
+                                    Empresas de e-commerce implementam frota de drones para entregas rápidas,
+                                    transformando o ...
+                                </h3>
+                            </div>
+                        </article>
+
+                        <article class="see-these-article">
+                            <!-- Artigo lateral (sections.css) -->
+
+                            <div>
+                                <img src="./assets/images/Image 18.png"
+                                    alt="Impressora 3D produzindo modelo de órgão humano">
+                                <!-- Imagem do artigo com descrição da impressão 3D médica -->
+                            </div>
+
+                            <div>
+                                <span class="content-tag">impressão 3D</span>
+                                <!-- Tag de categoria (sections.css ou utility.css) -->
+
+                                <h3 class="text-xl">
+                                    <!-- Título (utility.css) -->
+                                    Tecnologia inovadora permite a impressão 3D de órgãos humanos, revolucionando a
+                                    medicina e ...
+                                </h3>
+                            </div>
+                        </article>
                     </div>
-                </article>
+                </section>
             </div>
         </section>
-
-        <aside>
-            <div id="ads">
-                <img src="assets/Ads.png" alt="">
-            </div>
-
-            <section id="more">
-                <header class="grid grid-flow-col">
-                    <h3>Viu isso aqui?</h3>
-                    <a href="#" class="grid grid-flow-col">
-                        <strong>Ver tudo</strong>
-                        <span></span>
-                    </a>
-                </header>
-
-                <div class="grid gap-32">
-                    <article class="grid grid-flow-col gap-16">
-                        <div>
-                            <img src="assets/images/Image 14.png"
-                                alt="Aplicativo de monitoramento ambiental ganha destaque, incentivando práticas ecológicas e promovendo a conscientização.">
-                        </div>
-
-                        <div>
-                            <span class="content-tag">Software</span>
-                            <h3 class="text-xl">
-                                Aplicativo de monitoramento ambiental ganha destaque, incentivando práticas ecológic...
-                            </h3>
-                        </div>
-
-                    </article>
-
-                    <article class="grid grid-flow-col gap-16">
-                        <div>
-                            <img src="assets/images/Image 15.png"
-                                alt="Óculos de realidade virtual com feedback tátil proporcionam uma experiência sensorial completa, imergindo usuários em ambientes digitais.">
-                        </div>
-
-                        <div>
-                            <span class="content-tag">Realidade virtual</span>
-                            <h3 class="text-xl">
-                                Óculos de realidade virtual com feedback tátil proporcionam uma experiência sensorial
-                                comp...
-                            </h3>
-                        </div>
-
-                    </article>
-
-                    <article class="grid grid-flow-col gap-16">
-                        <div>
-                            <img src="assets/images/Image 16.png"
-                                alt="Surge uma nova moeda digital baseada em tecnologias sustentáveis, buscando minimizar o impacto ambiental associado à mineração de criptomoedas.">
-                        </div>
-
-                        <div>
-                            <span class="content-tag">criptomoedas</span>
-                            <h3 class="text-xl">
-                                Surge uma nova moeda digital baseada em tecnologias sustentáveis, buscando minimizar...
-                            </h3>
-                        </div>
-
-                    </article>
-
-                    <article class="grid grid-flow-col gap-16">
-                        <div>
-                            <img src="assets/images/Image 17.png"
-                                alt="Empresas de e-commerce implementam frota de drones para entregas rápidas, transformando o cenário do comércio online.">
-                        </div>
-
-                        <div>
-                            <span class="content-tag">Drones</span>
-                            <h3 class="text-xl">
-                                Empresas de e-commerce implementam frota de drones para entregas rápidas,
-                                transformando...
-                            </h3>
-                        </div>
-
-                    </article>
-
-                    <article class="grid grid-flow-col gap-16">
-                        <div>
-                            <img src="assets/images/Image 18.png"
-                                alt="Tecnologia inovadora permite a impressão 3D de órgãos humanos, revolucionando a medicina e a lista de espera por transplantes.">
-                        </div>
-
-                        <div>
-                            <span class="content-tag">Impressão 3D</span>
-                            <h3 class="text-xl">
-                                Tecnologia inovadora permite a impressão 3D de órgãos humanos, revolucionando a med...
-                            </h3>
-                        </div>
-
-                    </article>
-                </div>
-            </section>
-        </aside>
     </main>
+    <!-- Tag main fechada - fim do conteúdo principal -->
+
 </body>
+<!-- Tag body fechada - fim do conteúdo visível da página -->
 
 </html>
+<!-- Tag HTML fechada - fim do documento -->
