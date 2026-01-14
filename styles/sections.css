@@ -3,8 +3,10 @@
 /* ========================================================= */
 /* Aplica estilos na section com id="featured" */
 #featured {
-    display: grid;              /* Transforma a section em um container grid (organiza cards em linhas/colunas) */
-    gap: 1rem;                  /* Espaço entre os elementos filhos diretos (cards) */
+    display: grid;
+    /* Transforma a section em um container grid (organiza cards em linhas/colunas) */
+    gap: 1rem;
+    /* Espaço entre os elementos filhos diretos (cards) */
 }
 
 /* ========================================================= */
@@ -12,8 +14,10 @@
 /* ========================================================= */
 /* Normalmente é uma <div class="featured-list"> */
 .featured-list {
-    display: grid;              /* Usa grid para organizar os cards menores */
-    gap: 1rem;                  /* Espaçamento entre os cards (16px) */
+    display: grid;
+    /* Usa grid para organizar os cards menores */
+    gap: 1rem;
+    /* Espaçamento entre os cards (16px) */
 }
 
 /* ========================================================= */
@@ -21,53 +25,75 @@
 /* ========================================================= */
 /* Geralmente aplicado em um <figure class="card-featured"> */
 .card-featured {
-    height: 26rem;              /* Altura fixa do card no mobile */
-    width: 20.5rem;             /* Largura fixa do card no mobile */
+    height: 26rem;
+    /* Altura fixa do card no mobile */
+    width: 20.5rem;
+    /* Largura fixa do card no mobile */
 
-    position: relative;         /* Necessário para posicionar ::before e figcaption absolutamente */
-    border-radius: .25rem;      /* Arredonda levemente os cantos */
-    overflow: hidden;           /* Esconde qualquer conteúdo que ultrapasse o card */
+    position: relative;
+    /* Necessário para posicionar ::before e figcaption absolutamente */
+    border-radius: .25rem;
+    /* Arredonda levemente os cantos */
+    overflow: hidden;
+    /* Esconde qualquer conteúdo que ultrapasse o card */
 
     /* Pseudo-elemento usado para o degradê escuro sobre a imagem */
     &::before {
-        content: "";            /* Obrigatório para pseudo-elementos aparecerem */
-        position: absolute;     /* Permite posicionar sobre a imagem */
-        inset: 0;               /* Ocupa toda a área do card */
-        top: 50%;               /* Começa o degradê da metade para baixo */
-        background: linear-gradient(
-            180deg,
-            transparent 0%,     /* Parte superior transparente */
-            #020617 100%         /* Parte inferior escura */
-        );
+        content: "";
+        /* Obrigatório para pseudo-elementos aparecerem */
+        position: absolute;
+        /* Permite posicionar sobre a imagem */
+        inset: 0;
+        /* Ocupa toda a área do card */
+        top: 50%;
+        /* Começa o degradê da metade para baixo */
+        background: linear-gradient(180deg,
+                transparent 0%,
+                /* Parte superior transparente */
+                #020617 100%
+                /* Parte inferior escura */
+            );
     }
 
     /* Estiliza a imagem dentro do card */
     & img {
-        width: 100%;            /* Ocupa toda a largura do card */
-        height: 100%;           /* Ocupa toda a altura do card */
-        object-fit: cover;      /* Corta a imagem sem distorcer */
+        width: 100%;
+        /* Ocupa toda a largura do card */
+        height: 100%;
+        /* Ocupa toda a altura do card */
+        object-fit: cover;
+        /* Corta a imagem sem distorcer */
     }
 
     /* Estiliza o texto sobre a imagem (figcaption no HTML) */
     & figcaption {
-        position: absolute;     /* Fica sobre a imagem */
-        bottom: 0;              /* Gruda no fundo do card */
-        padding: .75rem;        /* Espaçamento interno */
-        max-width: 16.5rem;     /* Limita largura do texto */
-        min-height: 5.5rem;     /* Garante altura mínima do bloco */
+        position: absolute;
+        /* Fica sobre a imagem */
+        bottom: 0;
+        /* Gruda no fundo do card */
+        padding: .75rem;
+        /* Espaçamento interno */
+        max-width: 16.5rem;
+        /* Limita largura do texto */
+        min-height: 5.5rem;
+        /* Garante altura mínima do bloco */
 
         /* Quando o figcaption possui um elemento com .text-lg */
         &:has(.text-lg) {
-            padding: .75rem;    /* Mantém padding consistente */
+            padding: .75rem;
+            /* Mantém padding consistente */
         }
 
         /* Título principal dentro do figcaption (h2 no HTML) */
         & h2 {
-            margin-top: .5rem;  /* Espaço acima do título */
+            margin-top: .5rem;
+            /* Espaço acima do título */
             display: -webkit-box;
-            -webkit-line-clamp: 3; /* Limita o texto a 3 linhas */
+            -webkit-line-clamp: 3;
+            /* Limita o texto a 3 linhas */
             -webkit-box-orient: vertical;
-            overflow: hidden;   /* Esconde excesso de texto */
+            overflow: hidden;
+            /* Esconde excesso de texto */
         }
     }
 }
@@ -77,9 +103,12 @@
 /* ========================================================= */
 /* Geralmente <figure class="card"> */
 .card {
-    position: relative;         /* Base para pseudo-elemento e textos */
-    border-radius: .25rem;      /* Cantos arredondados */
-    overflow: hidden;           /* Evita imagem vazando */
+    position: relative;
+    /* Base para pseudo-elemento e textos */
+    border-radius: .25rem;
+    /* Cantos arredondados */
+    overflow: hidden;
+    /* Evita imagem vazando */
 
     /* Degradê escuro igual ao card principal */
     &::before {
@@ -87,18 +116,18 @@
         position: absolute;
         inset: 0;
         top: 50%;
-        background: linear-gradient(
-            180deg,
-            transparent 0%,
-            #020617 100%
-        );
+        background: linear-gradient(180deg,
+                transparent 0%,
+                #020617 100%);
     }
 
     /* Imagem do card */
     & img {
-        width: 20.5rem;         /* Largura fixa no mobile */
-        height: 100%;           
-        object-fit: cover;      /* Mantém proporção */
+        width: 20.5rem;
+        /* Largura fixa no mobile */
+        height: 100%;
+        object-fit: cover;
+        /* Mantém proporção */
     }
 
     /* Texto sobre a imagem */
@@ -128,26 +157,36 @@
 /* ========================================================= */
 /* Usada dentro de cards (<span class="content-tag">) */
 .content-tag {
-    display: inline-block;      /* Permite padding e tamanho próprio */
-    background: var(--brand-color-dark); /* Cor de fundo */
-    font: var(--text-span);     /* Fonte pequena definida nas variáveis */
+    display: inline-block;
+    /* Permite padding e tamanho próprio */
+    background: var(--brand-color-dark);
+    /* Cor de fundo */
+    font: var(--text-span);
+    /* Fonte pequena definida nas variáveis */
     color: var(--text-color-primary);
-    letter-spacing: 0.04em;     /* Espaçamento entre letras */
-    text-transform: uppercase; /* Texto sempre em maiúsculas */
-    padding: .25rem .5rem;      /* Espaçamento interno */
-    border-radius: .25rem;      /* Cantos arredondados */
-    box-shadow: 0 .25rem 1rem rgba(2, 6, 23, 0.25); /* Sombra */
+    letter-spacing: 0.04em;
+    /* Espaçamento entre letras */
+    text-transform: uppercase;
+    /* Texto sempre em maiúsculas */
+    padding: .25rem .5rem;
+    /* Espaçamento interno */
+    border-radius: .25rem;
+    /* Cantos arredondados */
+    box-shadow: 0 .25rem 1rem rgba(2, 6, 23, 0.25);
+    /* Sombra */
 }
 
 /* ========================================================= */
 /* ==== SEÇÃO MAIS LIDAS (#weakly no HTML) ================= */
 /* ========================================================= */
 #weakly {
-    margin-top: 3rem;           /* Espaço acima da seção */
+    margin-top: 3rem;
+    /* Espaço acima da seção */
 
     /* Título h3 dentro da seção */
     & h3 {
-        font: var(--text-sm);   /* Fonte menor */
+        font: var(--text-sm);
+        /* Fonte menor */
     }
 }
 
@@ -156,9 +195,12 @@
 /* ========================================================= */
 /* Normalmente contém título + link "ver tudo" */
 .section-header {
-    display: flex;              /* Alinha itens lado a lado */
-    justify-content: space-between; /* Um item à esquerda e outro à direita */
-    align-items: center;        /* Centraliza verticalmente */
+    display: flex;
+    /* Alinha itens lado a lado */
+    justify-content: space-between;
+    /* Um item à esquerda e outro à direita */
+    align-items: center;
+    /* Centraliza verticalmente */
     border-top: 1px solid var(--stroke-color);
     padding-block: .75rem 1.5rem;
     font: var(--text-sm);
@@ -168,7 +210,8 @@
 /* ==== LINK VER TUDO (.see-all no HTML) =================== */
 /* ========================================================= */
 .see-all {
-    display: inline-flex;       /* Texto e ícone lado a lado */
+    display: inline-flex;
+    /* Texto e ícone lado a lado */
     align-items: center;
     gap: .5rem;
     font: var(--text-sm);
@@ -239,6 +282,9 @@
 /* ========================================================= */
 /* ==== SEÇÃO IA (#ai no HTML) ============================== */
 /* ========================================================= */
+/* ========================================================= */
+/* ==== SEÇÃO IA ASSIMÉTRICA E ORGANIZADA (#ai no HTML) ==== */
+/* ========================================================= */
 #ai {
     margin-top: 3rem;
 }
@@ -248,7 +294,9 @@
     /* Estilizado apenas no desktop */
 }
 
-/* Lista de artigos IA */
+/* ========================================================= */
+/* ==== LISTA DE ARTIGOS IA - LAYOUT ASSIMÉTRICO =========== */
+/* ========================================================= */
 .ai-list {
     display: grid;
     gap: 1rem;
@@ -256,7 +304,7 @@
 }
 
 /* ========================================================= */
-/* ==== CARD DE ARTIGO IA (.ai-article no HTML) ============= */
+/* ==== CARD DE ARTIGO IA - BASE (.ai-article no HTML) ===== */
 /* ========================================================= */
 .ai-article {
     display: flex;
@@ -272,10 +320,19 @@
     background: var(--shape-background, transparent);
 
     margin-inline: auto;
+
+    /* Transição suave para hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito hover nos cards */
+.ai-article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(2, 6, 23, 0.2);
 }
 
 /* Bloco de texto do artigo */
-.ai-article > div:first-child {
+.ai-article>div:first-child {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -321,6 +378,46 @@
 }
 
 /* ========================================================= */
+/* ==== VARIAÇÕES ASSIMÉTRICAS - CARDS INDIVIDUAIS ========= */
+/* ========================================================= */
+
+/* Primeiro card - Maior e destaque */
+.ai-article:nth-child(1) {
+    width: 20.5rem;
+    height: 12rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, transparent 100%);
+}
+
+.ai-article:nth-child(1) img {
+    width: 6rem;
+    height: 6rem;
+}
+
+/* Segundo card - Padrão mas com borda diferente */
+.ai-article:nth-child(2) {
+    width: 20.5rem;
+    height: 10.25rem;
+    border-left: 3px solid var(--brand-color-dark);
+}
+
+/* Terceiro card - Compacto */
+.ai-article:nth-child(3) {
+    width: 20.5rem;
+    height: 9rem;
+}
+
+.ai-article:nth-child(3) p {
+    -webkit-line-clamp: 2;
+}
+
+/* Quarto card - Expandido */
+.ai-article:nth-child(4) {
+    width: 20.5rem;
+    height: 11.5rem;
+    background: linear-gradient(135deg, transparent 0%, rgba(139, 92, 246, 0.03) 100%);
+}
+
+/* ========================================================= */
 /* ==== ASIDE (.aside no HTML) ============================== */
 /* ========================================================= */
 .aside {
@@ -358,7 +455,7 @@
         object-fit: cover;
     }
 
-    & > div:last-child {
+    &>div:last-child {
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -381,7 +478,7 @@
 /* ========================================================= */
 /* ==== MEDIA QUERY DESKTOP ================================ */
 /* ========================================================= */
-@media (width >= 80em) {
+@media (width >=80em) {
     #featured {
         grid-template-columns: 1fr 1fr;
     }
@@ -408,6 +505,73 @@
 
     .ai-main {
         grid-column: 1 / 2;
+        width: 100%;
+    }
+
+    /* ===== GRID ASSIMÉTRICO PARA .ai-list ===== */
+    .ai-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+        justify-content: stretch;
+        align-items: start;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Card 1 - Grande (2 linhas) */
+    .ai-article:nth-child(1) {
+        width: 100%;
+        height: 21rem;
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        margin: 0;
+    }
+
+    .ai-article:nth-child(1) img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .ai-article:nth-child(1) h3 {
+        font-size: 1.125rem;
+        -webkit-line-clamp: 3;
+    }
+
+    .ai-article:nth-child(1) p {
+        -webkit-line-clamp: 6;
+    }
+
+    /* Card 2 - Superior direito */
+    .ai-article:nth-child(2) {
+        width: 100%;
+        height: 10rem;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        margin: 0;
+    }
+
+    /* Card 3 - Inferior direito */
+    .ai-article:nth-child(3) {
+        width: 100%;
+        height: 10rem;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        margin: 0;
+    }
+
+    .ai-article:nth-child(3) p {
+        -webkit-line-clamp: 3;
+    }
+
+    /* Card 4 - Largura total embaixo */
+    .ai-article:nth-child(4) {
+        width: 100%;
+        height: 10rem;
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        margin: 0;
     }
 
     #ads {
